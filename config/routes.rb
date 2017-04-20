@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'about/index'
+  get 'contact/index'
 
   #define resources here
   resources :orders
