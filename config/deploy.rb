@@ -10,6 +10,8 @@ set :ssh_options, {
   keys: ["#{Dir.home}/.ssh/aws-linux.pem"]
 }
 
+set :passenger_restart_with_touch, true
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
