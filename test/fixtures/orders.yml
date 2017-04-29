@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  account_num: MyString
+  first_name: MyString
+  last_name: MyString
+  phone: MyString
+  email: MyString
+  pickup_address: MyText
+  pickup_city: MyString
+  pickup_zip: MyString
+  pickup_company: MyString
+  pickup_contact: MyString
+  pickup_phone: MyString
+  delivery_address: MyText
+  delivery_city: MyString
+  delivery_zip: MyString
+  delivery_company: MyString
+  delivery_contact: MyString
+  delivery_phone: MyString
+  pickup_date: 2017-04-28
+  pickup_time: 2017-04-28 18:25:37
+  delivery_date: 2017-04-28
+  delivery_time: 2017-04-28 18:25:37
+
+two:
+  company: MyString
+  account_num: MyString
+  first_name: MyString
+  last_name: MyString
+  phone: MyString
+  email: MyString
+  pickup_address: MyText
+  pickup_city: MyString
+  pickup_zip: MyString
+  pickup_company: MyString
+  pickup_contact: MyString
+  pickup_phone: MyString
+  delivery_address: MyText
+  delivery_city: MyString
+  delivery_zip: MyString
+  delivery_company: MyString
+  delivery_contact: MyString
+  delivery_phone: MyString
+  pickup_date: 2017-04-28
+  pickup_time: 2017-04-28 18:25:37
+  delivery_date: 2017-04-28
+  delivery_time: 2017-04-28 18:25:37
