@@ -68,51 +68,53 @@
                     </div>
 
                     <div class="panel-body">
+
+
                         <div class="form-group">
-                            <label for="pickup_address" class="col-sm-1 col-form-label">Address*</label>
+                            <%= f.label :pickup_address, "Address*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="pickup_address" placeholder="Enter pick up address">
+                                <%= f.text_field :pickup_address, class:"form-control", placeholder:"Enter pick up address" %>
                             </div>
 
-                            <label for="pickup_company" class="col-sm-1 col-form-label">Company</label>
+                            <%= f.label :pickup_company, "Company", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="pickup_company" placeholder="Enter pick up company">
+                                <%= f.text_field :pickup_company, class:"form-control", placeholder:"Enter pick up company" %>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="pickup_city" class="col-sm-1 col-form-label">City*</label>
+                            <%= f.label :pickup_city, "City*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="pickup_city" placeholder="Enter pick up city">
+                                <%= f.text_field :pickup_city, class:"form-control", placeholder:"Enter pick up city" %>
                             </div>
 
-                            <label for="pickup_contact" class="col-sm-1 col-form-label">Contact*</label>
+                            <%= f.label :pickup_contact, "Contact*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="pickup_contact" placeholder="Enter pick up contact">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pickup_zip" class="col-sm-1 col-form-label">Zip*</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="pickup_zip" placeholder="Enter pick up zip code">
-                            </div>
-
-                            <label for="pickup_phone" class="col-sm-1 col-form-label">Phone*</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="pickup_phone" placeholder="Enter pick up phone">
+                                <%= f.text_field :pickup_contact, class:"form-control", placeholder:"Enter pick up contact" %>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="pickup_date" class="col-sm-1 col-form-label">Date*</label>
+                            <%= f.label :pickup_zip, "Zip*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="date" class="form-control" id="pickup_date" placeholder="Enter pick up date">
+                                <%= f.text_field :pickup_zip, class:"form-control", placeholder:"Enter pick up zip code" %>
                             </div>
 
-                            <label for="pickup_time" class="col-sm-1 col-form-label">Time*</label>
+                            <%= f.label :pickup_phone, "Phone*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="time" class="form-control" id="pickup_time" placeholder="Enter pick up time">
+                                <%= f.text_field :pickup_phone, class:"form-control", placeholder:"Enter pick up phone number" %>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :pickup_date, "Date*", class: "col-sm-1 col-form-label" %>
+                            <div class="col-sm-5">
+                                <%= f.date_field :pickup_date, class:"form-control", placeholder:"Enter pick up date" %>
+                            </div>
+
+                            <%= f.label :pickup_time, "Time*", class: "col-sm-1 col-form-label" %>
+                            <div class="col-sm-5">
+                                <%= f.time_field :pickup_time, class:"form-control", placeholder:"Enter pick up time" %>
                             </div>
                         </div>
                     </div>
@@ -130,50 +132,50 @@
 
                     <div class="panel-body">
                         <div class="form-group">
-                            <label for="delivery_address" class="col-sm-1 col-form-label">Address*</label>
+                            <%= f.label :delivery_address, "Address*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="delivery_address" placeholder="Enter delivery address">
+                                <%= f.text_field :delivery_address, class:"form-control", placeholder:"Enter delivery address" %>
                             </div>
 
-                            <label for="delivery_company" class="col-sm-1 col-form-label">Company</label>
+                            <%= f.label :delivery_company, "Company", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="delivery_company" placeholder="Enter delivery company">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="delivery_city" class="col-sm-1 col-form-label">City*</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="delivery_city" placeholder="Enter delivery city">
-                            </div>
-
-                            <label for="delivery_contact" class="col-sm-1 col-form-label">Contact*</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="delivery_contact" placeholder="Enter delivery contact">
+                                <%= f.text_field :delivery_company, class:"form-control", placeholder:"Enter delivery company" %>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="delivery_zip" class="col-sm-1 col-form-label">Zip*</label>
+                            <%= f.label :delivery_city, "City*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="delivery_zip" placeholder="Enter delivery zip code">
+                                <%= f.text_field :delivery_city, class:"form-control", placeholder:"Enter delivery city" %>
                             </div>
 
-                            <label for="delivery_phone" class="col-sm-1 col-form-label">Phone*</label>
+                            <%= f.label :delivery_contact, "Contact*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="delivery_phone" placeholder="Enter delivery phone">
+                                <%= f.text_field :delivery_contact, class:"form-control", placeholder:"Enter delivery contact" %>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="delivery_date" class="col-sm-1 col-form-label">Date*</label>
+                            <%= f.label :delivery_zip, "Zip*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="date" class="form-control" id="delivery_date" placeholder="Enter delivery date">
+                                <%= f.text_field :delivery_zip, class:"form-control", placeholder:"Enter delivery zip code" %>
                             </div>
 
-                            <label for="delivery_time" class="col-sm-1 col-form-label">Time*</label>
+                            <%= f.label :delivery_phone, "Phone*", class: "col-sm-1 col-form-label" %>
                             <div class="col-sm-5">
-                                <input type="time" class="form-control" id="delivery_time" placeholder="Enter delivery time">
+                                <%= f.text_field :delivery_phone, class:"form-control", placeholder:"Enter delivery phone number" %>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :delivery_date, "Date*", class: "col-sm-1 col-form-label" %>
+                            <div class="col-sm-5">
+                                <%= f.date_field :delivery_date, class:"form-control", placeholder:"Enter delivery date" %>
+                            </div>
+
+                            <%= f.label :delivery_time, "Time*", class: "col-sm-1 col-form-label" %>
+                            <div class="col-sm-5">
+                                <%= f.time_field :delivery_time, class:"form-control", placeholder:"Enter delivery time" %>
                             </div>
                         </div>
                     </div>
