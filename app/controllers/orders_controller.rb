@@ -3,6 +3,10 @@ class OrdersController < ApplicationController
 
   end
 
+  def show
+    @orders = Order.find(params[:id])
+  end
+
   def create
     @orders = Order.new(order_params)
     @orders.save
