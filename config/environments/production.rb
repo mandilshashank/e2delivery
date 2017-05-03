@@ -83,4 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #Google API key
+  config.google_api_key = "AIzaSyAi_COht5lufLn30gzJcl_nHWP_1UpCCyE"
 end

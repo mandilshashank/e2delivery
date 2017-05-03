@@ -51,4 +51,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  #Google API key
+  config.google_api_key = "AIzaSyAi_COht5lufLn30gzJcl_nHWP_1UpCCyE"
 end

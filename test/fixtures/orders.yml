@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  company: MyString
+  company_name: MyString
   account_num: MyString
   first_name: MyString
   last_name: MyString
   phone: MyString
-  email: MyString
+  company_email: MyString
   pickup_address: MyText
   pickup_city: MyString
   pickup_zip: MyString
@@ -25,12 +25,12 @@ one:
   delivery_time: 2017-04-28 18:25:37
 
 two:
-  company: MyString
+  company_name: MyString
   account_num: MyString
   first_name: MyString
   last_name: MyString
   phone: MyString
-  email: MyString
+  company_email: MyString
   pickup_address: MyText
   pickup_city: MyString
   pickup_zip: MyString
