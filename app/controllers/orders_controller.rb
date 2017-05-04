@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
 
   def create
     @orders = Order.new(order_params)
+
+    #Todo: Before saving the order redirect to payment page. Compute payment using the pick up and delivery zip codes
+    distance = get_distance(:pickup_zip, :delivery_zip)
+    distance_float = distance.gsub(" mi","").to_float
+
     @orders.save
     redirect_to @orders
   end
@@ -25,7 +30,7 @@ class OrdersController < ApplicationController
 
     def self.get_distance(pzip, dzip)
       google_api = Rails.application.config.google_api_key
-      url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='+ pzip+'&destinations=' + dzip +
+      url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + pzip + '&destinations=' + dzip +
           '&mode=driving&sensor=false&units=imperial&key=' + google_api
       response = HTTParty.get(url)
       distance = response.parsed_response["rows"][0]["elements"][0]["distance"]["text"]
