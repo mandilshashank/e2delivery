@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    session[:order_params].deep_merge!(params[:order]) if params[:order]
+    session[:order_params].deep_merge!(params[:orders]) if params[:orders]
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
     if @order.valid?
