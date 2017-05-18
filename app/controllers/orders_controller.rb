@@ -12,6 +12,12 @@ class OrdersController < ApplicationController
   end
 
   def create
+    if not defined?(@order)
+      session[:order_params] ||= {}
+      @order = Order.new(session[:order_params])
+      @order.current_step = session[:order_step]
+    end
+
     session[:order_params].deep_merge!(params[:orders]) if params[:orders]
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
@@ -33,18 +39,18 @@ class OrdersController < ApplicationController
       redirect_to @order
     end
 
-    # @orders = Order.new(order_params)
-
-    #Todo: Before saving the order redirect to payment page. Compute payment using the pick up and delivery zip codes
-    #distance = get_distance(:pickup_zip, :delivery_zip)
-    distance = get_distance("95035", "94063")
-    distance_float = distance.gsub(" mi","").to_f
-
-    # @orders.save
-    # redirect_to @orders
+    # Todo: Before saving the order redirect to payment page. Compute payment using the pick up and delivery zip codes
+    if params[:orders] && params[:orders]["pickup_zip"] && params[:orders]["delivery_zip"]
+      distance = OrdersController.get_distance(params[:orders]["pickup_zip"], params[:orders]["delivery_zip"])
+      distance_float = distance.gsub(" mi","").to_f
+      no_items = 2
+      delivery_fee = 25 + distance_float
+    else
+      delivery_fee = 30
+    end
   end
 
-  def get_distance(pzip, dzip)
+  def self.get_distance(pzip, dzip)
     google_api = Rails.application.config.google_api_key
     url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + pzip +
         '&destinations=' + dzip + '&mode=driving&sensor=false&units=imperial&key=' + google_api
