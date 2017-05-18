@@ -1,0 +1,172 @@
+
+<!--Print the order details and show the payment to be done-->
+
+<!-- Company information panel-->
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Company Information</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <%= f.label :company_name, "Company Name*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :company_name, @order.company_name %>
+            </div>
+
+            <%= f.label :account_num, "Account Number", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :account_num, @order.account_num%>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :first_name, "First Name*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :first_name, @order.first_name %>
+            </div>
+
+            <%= f.label :last_name, "Last Name*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :last_name, @order.last_name %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :phone, "Phone*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :phone, @order.phone %>
+            </div>
+
+            <%= f.label :company_email, "Email Id*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :company_email, @order.company_email%>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Company Information Panel-->
+
+
+<!-- Start order pickup panel-->
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Pick up details</h3>
+    </div>
+
+    <div class="panel-body">
+
+
+        <div class="form-group">
+            <%= f.label :pickup_address, "Address*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_address, @order.pickup_address %>
+            </div>
+
+            <%= f.label :pickup_company, "Company", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_company, @order.pickup_company %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pickup_city, "City*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_city, @order.pickup_city %>
+            </div>
+
+            <%= f.label :pickup_contact, "Contact*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_contact, @order.pickup_contact %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pickup_zip, "Zip*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_zip, @order.pickup_zip %>
+            </div>
+
+            <%= f.label :pickup_phone, "Phone*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_phone, @order.pickup_phone %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pickup_date, "Date*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_date, @order.pickup_date %>
+            </div>
+
+            <%= f.label :pickup_time, "Time*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :pickup_time, @order.pickup_time %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End order pickup panel-->
+
+<!-- Start order delivery panel-->
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Delivery details</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <%= f.label :delivery_address, "Address*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_address, @order.delivery_address %>
+            </div>
+
+            <%= f.label :delivery_company, "Company", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_company, @order.delivery_company %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :delivery_city, "City*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_city, @order.delivery_city %>
+            </div>
+
+            <%= f.label :delivery_contact, "Contact*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_contact, @order.delivery_contact %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :delivery_zip, "Zip*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_zip, @order.delivery_zip %>
+            </div>
+
+            <%= f.label :delivery_phone, "Phone*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_phone, @order.delivery_phone %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :delivery_date, "Date*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_date, @order.delivery_date %>
+            </div>
+
+            <%= f.label :delivery_time, "Time*", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+                <%= f.label :delivery_time, @order.delivery_time %>
+            </div>
+        </div>
+    </div>
+</div>

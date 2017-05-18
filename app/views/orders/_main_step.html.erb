@@ -1,0 +1,191 @@
+<!-- Company information panel-->
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Company Information</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <%= f.label :company_name, "Company Name*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :company_name, value: session[:order_params]["company_name"] || "",
+                    class:"form-control", placeholder:"Enter company information" %>
+            </div>
+
+            <%= f.label :account_num, "Account Number", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :account_num, value: session[:order_params]["account_num"] || "",
+                    class:"form-control", placeholder:"Enter account number" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :first_name, "First Name*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :first_name, value: session[:order_params]["first_name"] || "",
+                    class:"form-control", placeholder:"Enter first name" %>
+            </div>
+
+            <%= f.label :last_name, "Last Name*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :last_name, value: session[:order_params]["last_name"] || "",
+                    class:"form-control", placeholder:"Enter last name" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :phone, "Phone*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :phone, value: session[:order_params]["phone"] || "",
+                    class:"form-control", placeholder:"Enter phone number" %>
+            </div>
+
+            <%= f.label :company_email, "Email Id*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :company_email, value: session[:order_params]["company_email"] || "",
+                    class:"form-control", placeholder:"Enter email id" %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Company Information Panel-->
+
+
+<!-- Start order pickup panel-->
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Pick up details</h3>
+    </div>
+
+    <div class="panel-body">
+
+
+        <div class="form-group">
+            <%= f.label :pickup_address, "Address*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :pickup_address, value: session[:order_params]["pickup_address"] || "",
+                    class:"form-control", placeholder:"Enter pick up address" %>
+            </div>
+
+            <%= f.label :pickup_company, "Company", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :pickup_company, value: session[:order_params]["pickup_company"] || "",
+                    class:"form-control", placeholder:"Enter pick up company" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pickup_city, "City*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :pickup_city, value: session[:order_params]["pickup_city"] || "",
+                    class:"form-control", placeholder:"Enter pick up city" %>
+            </div>
+
+            <%= f.label :pickup_contact, "Contact*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :pickup_contact, value: session[:order_params]["pickup_contact"] || "",
+                    class:"form-control", placeholder:"Enter pick up contact" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pickup_zip, "Zip*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :pickup_zip, value: session[:order_params]["pickup_zip"] || "",
+                    class:"form-control", placeholder:"Enter pick up zip code" %>
+            </div>
+
+            <%= f.label :pickup_phone, "Phone*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :pickup_phone, value: session[:order_params]["pickup_phone"] || "",
+                    class:"form-control", placeholder:"Enter pick up phone number" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pickup_date, "Date*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.date_field :pickup_date, value: session[:order_params]["pickup_date"] || "",
+                    class:"form-control", placeholder:"Enter pick up date" %>
+            </div>
+
+            <%= f.label :pickup_time, "Time*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.time_field :pickup_time, value: session[:order_params]["pickup_time"] || "",
+                    class:"form-control", placeholder:"Enter pick up time" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End order pickup panel-->
+
+<!-- Start order delivery panel-->
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Delivery details</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <%= f.label :delivery_address, "Address*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :delivery_address, value: session[:order_params]["delivery_address"] || "",
+                    class:"form-control", placeholder:"Enter delivery address" %>
+            </div>
+
+            <%= f.label :delivery_company, "Company", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :delivery_company, value: session[:order_params]["delivery_company"] || "",
+                    class:"form-control", placeholder:"Enter delivery company" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :delivery_city, "City*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :delivery_city, value: session[:order_params]["delivery_city"] || "",
+                    class:"form-control", placeholder:"Enter delivery city" %>
+            </div>
+
+            <%= f.label :delivery_contact, "Contact*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :delivery_contact, value: session[:order_params]["delivery_contact"] || "",
+                    class:"form-control", placeholder:"Enter delivery contact" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :delivery_zip, "Zip*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :delivery_zip, value: session[:order_params]["delivery_zip"] || "",
+                    class:"form-control", placeholder:"Enter delivery zip code" %>
+            </div>
+
+            <%= f.label :delivery_phone, "Phone*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.text_field :delivery_phone, value: session[:order_params]["delivery_phone"] || "",
+                    class:"form-control", placeholder:"Enter delivery phone number" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :delivery_date, "Date*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.date_field :delivery_date, value: session[:order_params]["delivery_date"] || "",
+                    class:"form-control", placeholder:"Enter delivery date" %>
+            </div>
+
+            <%= f.label :delivery_time, "Time*", class: "col-sm-1 col-form-label" %>
+            <div class="col-sm-5">
+                <%= f.time_field :delivery_time, value: session[:order_params]["delivery_time"] || "",
+                    class:"form-control", placeholder:"Enter delivery time" %>
+            </div>
+        </div>
+    </div>
+</div>
