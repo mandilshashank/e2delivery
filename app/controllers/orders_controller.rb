@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     @order.current_step = session[:order_step]
   end
 
+  def index
+    redirect_to controller: 'orders', action: 'new'
+  end
+
   def show
     @orders = Order.find(params[:id])
   end
@@ -21,6 +25,23 @@ class OrdersController < ApplicationController
     session[:order_params].deep_merge!(params[:orders]) if params[:orders]
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
+
+
+    # Todo: Before saving the order redirect to payment page. Compute payment using the pick up and delivery zip codes
+    delivery_fee = ""
+    if params[:orders] && params[:orders]["pickup_zip"] && params[:orders]["delivery_zip"]
+      begin
+        distance = OrdersController.get_distance(params[:orders]["pickup_zip"], params[:orders]["delivery_zip"])
+        distance_float = distance.gsub(" mi","").to_f
+        no_items = 2
+        delivery_fee = (25 + distance_float) * 100
+      rescue
+        delivery_fee = 30 * 100
+      end
+    else
+      delivery_fee = 30 * 100
+    end
+
     if @order.valid?
       if params[:back_button]
         @order.previous_step
@@ -36,17 +57,7 @@ class OrdersController < ApplicationController
     else
       session[:order_step] = session[:order_params] = nil
       flash[:notice] = "Order saved!"
-      redirect_to @order
-    end
-
-    # Todo: Before saving the order redirect to payment page. Compute payment using the pick up and delivery zip codes
-    if params[:orders] && params[:orders]["pickup_zip"] && params[:orders]["delivery_zip"]
-      distance = OrdersController.get_distance(params[:orders]["pickup_zip"], params[:orders]["delivery_zip"])
-      distance_float = distance.gsub(" mi","").to_f
-      no_items = 2
-      delivery_fee = 25 + distance_float
-    else
-      delivery_fee = 30
+      redirect_to controller: 'charges', action: 'new', a: delivery_fee
     end
   end
 

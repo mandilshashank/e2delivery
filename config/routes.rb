@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   #define resources here
   resources :orders
+  resources :charges
 
   #Define paths here
   root 'welcome#index'
