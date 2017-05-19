@@ -14,7 +14,7 @@
         <div class="starter-template">
             <%= form_for(:orders, :html => {:class => 'form-horizontal'}, :url => orders_path) do |f| %>
                 <%= render :partial => "orders/#{@order.current_step}_step", :locals => {:f => f} %>
-                <p><%= f.submit "Continue", class:"btn btn-default"%></p>
+
                 <p><%= f.submit "Back", class:"btn btn-default", :name => "back_button" unless @order.first_step? %></p>
             <% end %>
         </div>
