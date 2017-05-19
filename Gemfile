@@ -44,6 +44,9 @@ gem 'capistrano-passenger', '~> 0.2.0'
 # Add this if you're using rbenv
 gem 'capistrano-rbenv', '~> 2.1'
 
+#Add stripe gem
+gem 'stripe'
+
 #httpparty
 gem 'httparty', '~> 0.14.0'
 
