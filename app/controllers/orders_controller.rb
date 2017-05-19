@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     @order.current_step = session[:order_step]
   end
 
+  def index
+    redirect_to controller: 'orders', action: 'new'
+  end
+
   def show
     @orders = Order.find(params[:id])
   end
