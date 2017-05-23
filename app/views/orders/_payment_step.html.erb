@@ -104,7 +104,7 @@
 
             <%= f.label :pickup_time, "Time*", class: "col-sm-2 col-form-label" %>
             <div class="col-sm-4">
-                <%= f.label :pickup_time, @order.pickup_time %>
+                <%= f.label :pickup_time, @order.pickup_time.strftime("%T") %>
             </div>
         </div>
     </div>
@@ -165,7 +165,7 @@
 
             <%= f.label :delivery_time, "Time*", class: "col-sm-2 col-form-label" %>
             <div class="col-sm-4">
-                <%= f.label :delivery_time, @order.delivery_time %>
+                <%= f.label :delivery_time, @order.delivery_time.strftime("%T") %>
             </div>
         </div>
     </div>
