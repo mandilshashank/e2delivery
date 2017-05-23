@@ -14,7 +14,15 @@ class Order < ApplicationRecord
 
   # Email regex /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
   validates :company_email, format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/, message: "invalid email" }
-  
+
+  # Pickup date cannot be less than delivery date
+  validate :pick_up_date_cannot_be_before_delivery_date
+
+  def pick_up_date_cannot_be_before_delivery_date
+    if pickup_date > delivery_date
+      errors.add(:pickup_date, "can't be less than delivery date")
+    end
+  end
 
   def current_step
     @current_step || steps.first
