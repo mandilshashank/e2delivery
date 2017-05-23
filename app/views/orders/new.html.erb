@@ -13,6 +13,19 @@
     <div class="container">
         <div class="starter-template">
             <%= form_for(:orders, :html => {:class => 'form-horizontal'}, :url => orders_path) do |f| %>
+
+                <% if @order.errors.any? %>
+                    <div id="error_explanation" style="color: red;">
+                        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved</h2>
+
+                        <ul>
+                            <% @order.errors.full_messages.each do |msg| %>
+                                <li><%= msg %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>
+
                 <%= render :partial => "orders/#{@order.current_step}_step", :locals => {:f => f} %>
 
                 <p><%= f.submit "Back", class:"btn btn-default", :name => "back_button" unless @order.first_step? %></p>
