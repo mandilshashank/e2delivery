@@ -14,6 +14,7 @@
         <div class="starter-template">
             <%= form_for(:orders, :html => {:class => 'form-horizontal'}, :url => orders_path) do |f| %>
 
+                <!-- Space to show errors in the order field-->
                 <% if @order.errors.any? %>
                     <div id="error_explanation" style="color: red;">
                         <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved</h2>

@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            <%= f.label :phone, "Phone*", class: "col-sm-1 col-form-label" %>
+            <%= f.label :phone, "Phone* xxx-xxx-xxxx", class: "col-sm-1 col-form-label" %>
             <div class="col-sm-5">
                 <%= f.text_field :phone, value: session[:order_params]["phone"] || "",
                     class:"form-control", placeholder:"Enter phone number" %>
@@ -98,7 +98,7 @@
                     class:"form-control", placeholder:"Enter pick up zip code" %>
             </div>
 
-            <%= f.label :pickup_phone, "Phone*", class: "col-sm-1 col-form-label" %>
+            <%= f.label :pickup_phone, "Phone* xxx-xxx-xxxx", class: "col-sm-1 col-form-label" %>
             <div class="col-sm-5">
                 <%= f.text_field :pickup_phone, value: session[:order_params]["pickup_phone"] || "",
                     class:"form-control", placeholder:"Enter pick up phone number" %>
@@ -167,7 +167,7 @@
                     class:"form-control", placeholder:"Enter delivery zip code" %>
             </div>
 
-            <%= f.label :delivery_phone, "Phone*", class: "col-sm-1 col-form-label" %>
+            <%= f.label :delivery_phone, "Phone* xxx-xxx-xxxx", class: "col-sm-1 col-form-label" %>
             <div class="col-sm-5">
                 <%= f.text_field :delivery_phone, value: session[:order_params]["delivery_phone"] || "",
                     class:"form-control", placeholder:"Enter delivery phone number" %>

@@ -7,6 +7,15 @@ class Order < ApplicationRecord
             :delivery_city, :delivery_contact, :delivery_zip, :delivery_phone, :delivery_date,
             :delivery_time, presence: true
 
+  # Validate phone numbers
+  validates :pickup_phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "should be in xxx-xxx-xxxx format" }
+  validates :delivery_phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "should be in xxx-xxx-xxxx format" }
+  validates :phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "should be in xxx-xxx-xxxx format" }
+
+  # Email regex /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
+  validates :company_email, format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/, message: "invalid email" }
+  
+
   def current_step
     @current_step || steps.first
   end
