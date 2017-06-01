@@ -22,25 +22,25 @@ class Order < ApplicationRecord
   validate :same_date_pickup_time_should_be_less_than_delivery_time
 
   def pick_up_date_cannot_be_before_delivery_date
-    if pickup_date > delivery_date
+    if pickup_date && delivery_date && pickup_date > delivery_date
       errors.add(:pickup_date, "can't be greater than delivery date")
     end
   end
 
   def pick_up_date_cannot_be_before_current_date
-    if pickup_date < DateTime.now.to_date
+    if pickup_date && pickup_date < DateTime.now.to_date
       errors.add(:pickup_date, "can't be less than current date")
     end
   end
 
   def delivery_date_cannot_be_before_current_date
-    if delivery_date < DateTime.now.to_date
+    if delivery_date && delivery_date < DateTime.now.to_date
       errors.add(:delivery_date, "can't be less than current date")
     end
   end
 
   def same_date_pickup_time_should_be_less_than_delivery_time
-    if pickup_date == delivery_date && pickup_time > delivery_time
+    if pickup_date && delivery_date && pickup_date == delivery_date && pickup_time > delivery_time
       errors.add(:pickup_time, "can't be greater than delivery time for same day pickup and delivery")
     end
   end
