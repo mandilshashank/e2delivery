@@ -35,6 +35,7 @@ class OrdersController < ApplicationController
         distance_float = distance.gsub(" mi","").to_f
         no_items = 2
         delivery_fee = (25 + distance_float) * 100
+        session["delivery_fee"] = delivery_fee
       rescue
         delivery_fee = 30 * 100
       end
@@ -55,9 +56,15 @@ class OrdersController < ApplicationController
     if @order.new_record?
       render "new"
     else
+      final_fee = ""
+      if session["delivery_fee"]
+        final_fee = session["delivery_fee"]
+      else
+        final_fee = 30 * 100
+      end
       session[:order_step] = session[:order_params] = nil
       flash[:notice] = "Order saved!"
-      redirect_to controller: 'charges', action: 'new', a: delivery_fee
+      redirect_to controller: 'charges', action: 'new', a: final_fee
     end
   end
 
